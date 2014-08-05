@@ -7,7 +7,7 @@ var stacheController = require('./stache/stache.controller.js');
 //temporary
 var seed = require('./stache/stache.seed.js');
 
-var router = express.Router()
+var router = express.Router();
 
 //staches/283497a823947hj
 //staches?=
@@ -18,6 +18,8 @@ router.get('/:id', function(req, res) {
 });
     
 router.get('/', function(req, res) {
+// example route with querystring:
+// http://localhost:8000/staches/?coord=40+5+10
   console.log('get staches near', req.query, '. request body:', req.body);
   stacheController.getNearby(req, res);
 });
